@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers</title>
+</head>
+<body>
+    <h1>Customer List</h1>
+    <ul>
+    {% for customer in customers %}
+        <li>{{ customer.name }} ({{ customer.plan }} plan) - Data Used: {{ customer.data_used }} GB 
+        <a href="/generate_invoice/{{ customer.customer_id }}">Generate Invoice</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
